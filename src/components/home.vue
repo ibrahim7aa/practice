@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <h1 class="m-4">hi guys </h1>
 </template>
 <script>
@@ -6,7 +6,7 @@ export default {
   name:'HomePage',
 
  }
-</script>
+</script> -->
 
 
 

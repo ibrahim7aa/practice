@@ -1,11 +1,11 @@
-<template>
+<!-- <template>
 <h1>{{ name }}</h1>
 </template>
 <script>
 export default {
     name: 'ChildComp', 
 };
-</script>
+</script> -->
 <!-- <h1>{{ user.name }}</h1>
 <button v-on:click="getData()" >Call Function </button> -->
 <!-- 

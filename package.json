@@ -16,6 +16,7 @@
     "core-js": "^3.8.3",
     "lucide-vue-next": "^0.474.0",
     "vue": "^3.2.13",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {

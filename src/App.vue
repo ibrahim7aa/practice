@@ -1,20 +1,17 @@
-<script setup>
+<!-- <script setup>
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLightbulb, faMoon, faSearch, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { ref, onMounted, onUnmounted } from "vue";
-
 library.add(faLightbulb, faMoon, faSearch, faGlobe, faGithub);
-
 const isDark = ref(localStorage.getItem("theme") === "dark");
 const toggleDarkMode = () => {
   isDark.value = !isDark.value;
   localStorage.setItem("theme", isDark.value ? "dark" : "light");
   document.documentElement.classList.toggle("dark", isDark.value);
 };
-
 const searchQuery = ref("");
 const languages = ref([]);
 const selectedLanguage = ref("en");
@@ -103,20 +100,17 @@ const scrollToSection = (id) => {
 </script>
 <template>
   <nav class="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
-    <!-- Logo and Name -->
+ 
     <div class="flex items-center space-x-2">
       <img src="@/assets/logo.png" alt="Logo" class="h-10" />
       <span class="text-lg font-semibold">FastAPI</span>
     </div>
-
-    <!-- Icons & Actions -->
+>
     <div class="flex items-center space-x-4">
-      <!-- Dark Mode Toggle -->
       <button @click="toggleDarkMode">
         <FontAwesomeIcon :icon="isDark ? 'moon' : 'lightbulb'" class="text-xl" />
       </button>
 
-      <!-- Language Dropdown -->
       <div class="relative">
         <FontAwesomeIcon icon="globe" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <select v-model="selectedLanguage" class="pl-10 pr-4 py-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none">
@@ -127,7 +121,6 @@ const scrollToSection = (id) => {
         </select>
       </div>
 
-      <!-- Search Box with Icon -->
       <div class="relative">
         <FontAwesomeIcon icon="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <input
@@ -143,27 +136,20 @@ const scrollToSection = (id) => {
     </div>
   </nav>
   <div class="flex h-screen">
-    <!-- Left Sidebar -->
     <aside class="w-1/5 bg-gray-200 dark:bg-gray-800 p-4">
       <h2 class="text-center text-xl font-bold mb-4">FastAPI</h2>
     </aside>
-<!-- main --><main id="main-content" class="w-3/5 p-6 dark:bg-gray-800 overflow-y-auto h-screen">
+<main id="main-content" class="w-3/5 p-6 dark:bg-gray-800 overflow-y-auto h-screen">
   <section v-for="heading in headings" :id="heading.id" :key="heading.id" class="mb-6">
     <h1 class="text-2xl font-bold mb-2">{{ heading.title }}</h1>
 
-    <!-- Content Display -->
     <p v-if="heading.content" class="text-gray-700 dark:text-gray-300">{{ heading.content }}</p>
 
-    <!-- Images Display -->
     <div v-if="heading.images" class="grid grid-cols-2 gap-4 mt-4">
       <img v-for="(image, index) in heading.images" :key="index" :src="image" class="w-full h-auto rounded-lg shadow-md" />
     </div>
   </section>
 </main>
-
-
-
-    <!-- Right Sidebar -->
     <aside class="w-1/5 bg-gray-200 dark:bg-gray-800 p-4">
   <h2 class="text-center text-xl font-bold mb-4">Sections</h2>
   <ul>
@@ -195,4 +181,16 @@ html.dark {
   background-color: #3b82f6; /* Blue color */
   color: white;
 }
-</style>
+</style> -->
+<template>
+ <FoodItems />
+</template>
+<script >
+import FoodItems from "./components/FoodItems.vue";
+
+export default {
+  components: {
+FoodItems 
+}
+};
+</script>
